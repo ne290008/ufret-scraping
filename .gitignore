@@ -1,0 +1,8 @@
+*.pyc
+*~
+__pycache__
+myvenv
+venv37
+venv38
+.DS_Store
+.idea
