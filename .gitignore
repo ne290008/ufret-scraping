@@ -190,7 +190,10 @@ $RECYCLE.BIN/
 
 
 ## personal settings
-myvenv
-venv37
-venv38
-.idea
+myvenv/
+venv37/
+venv38/
+.idea/
+params/*.txt
+result/
+*.html
