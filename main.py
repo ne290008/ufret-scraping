@@ -29,7 +29,7 @@ def get_html(data_id):
 def get_chord_prog(bs, transpose=0):
     """コード進行取得、移調する（オプション）"""
 
-    cp = ChordProgression([elem.text.replace('♭', 'b').replace('maj', 'M') for elem in bs.select('span ruby rt')])
+    cp = ChordProgression([elem.text.replace('♭', 'b').replace('maj', 'M') for elem in bs.select('span ruby rt') if elem.text not in ('N.C', 'N.C.')])
     cp.transpose(transpose)
 
     return ' '.join([str(c) for c in cp])
@@ -99,3 +99,4 @@ if __name__ == '__main__':
             with open('./result/title/'+path.splitext(path.basename(ifile))[0]+'-title'+path.splitext(path.basename(ifile))[1], mode='w') as f:
                 f.write('\n'.join(title))
     pbar.close()
+    print('Completed!')
